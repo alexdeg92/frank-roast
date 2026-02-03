@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏆 The Official Frank Appreciation Page 🏆</title>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Bangers&display=swap" rel="stylesheet">
+    <title>Frank Est Con | Dossier Officiel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,256 +12,525 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --bg: #0a0a0b;
+            --card: #141416;
+            --border: #27272a;
+            --text: #fafafa;
+            --muted: #71717a;
+            --accent: #ef4444;
+            --accent-soft: rgba(239, 68, 68, 0.1);
+        }
+        
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            font-family: 'Comic Neue', cursive;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .trophy {
-            font-size: 6rem;
-            animation: bounce 1s infinite;
-            display: inline-block;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        h1 {
-            font-family: 'Bangers', cursive;
-            font-size: 3.5rem;
-            color: #fff;
-            text-shadow: 4px 4px 0 #000, -2px -2px 0 #ff6b6b;
-            margin: 1rem 0;
-            letter-spacing: 3px;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            color: #ffeaa7;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 1.5rem 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            transform: rotate(-1deg);
-            transition: transform 0.3s;
-        }
-        
-        .card:nth-child(even) {
-            transform: rotate(1deg);
-        }
-        
-        .card:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-        
-        .card h2 {
-            font-family: 'Bangers', cursive;
-            color: #6c5ce7;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .card p {
-            color: #2d3436;
-            font-size: 1.2rem;
+            background: var(--bg);
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text);
             line-height: 1.6;
         }
         
-        .achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+        .noise {
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
         }
         
         .badge {
-            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
-            border-radius: 15px;
-            padding: 1rem;
-            font-weight: bold;
-            color: #2d3436;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
         }
         
-        .badge .emoji {
-            font-size: 2rem;
-            display: block;
+        .badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
             margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #71717a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .quote {
-            font-size: 1.3rem;
-            color: #e17055;
-            font-style: italic;
+        .tagline {
+            color: var(--muted);
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+        
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-soft);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .stat {
+            text-align: center;
             padding: 1rem;
-            border-left: 4px solid #e17055;
-            background: #fff5f5;
-            margin: 1rem 0;
-            text-align: left;
+            background: var(--bg);
+            border-radius: 12px;
         }
         
-        .counter {
-            background: #2d3436;
-            color: #fff;
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            display: inline-block;
-            margin: 2rem 0;
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
         }
         
-        .counter-number {
-            font-family: 'Bangers', cursive;
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent-soft), var(--card));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 3rem;
-            color: #ff6b6b;
+            flex-shrink: 0;
+            border: 3px solid var(--border);
+        }
+        
+        .profile-info h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .profile-info .role {
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-info p {
+            color: var(--muted);
+            font-size: 0.9375rem;
+        }
+        
+        .traits-list {
+            list-style: none;
+        }
+        
+        .traits-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .traits-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .trait-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .trait-content {
+            flex: 1;
+        }
+        
+        .trait-name {
+            font-weight: 500;
+            margin-bottom: 0.125rem;
+        }
+        
+        .trait-desc {
+            font-size: 0.8125rem;
+            color: var(--muted);
+        }
+        
+        .quote-card {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .quote-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        
+        .quote-text {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        
+        .quote-author {
+            font-size: 0.8125rem;
+            color: var(--muted);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+        
+        .counter-section {
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+        
+        .counter-value {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
         }
         
         .counter-label {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        .sparkle {
-            position: fixed;
-            pointer-events: none;
-            animation: sparkle 1.5s infinite;
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
         }
         
         footer {
-            margin-top: 3rem;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.8125rem;
         }
         
-        .clown {
-            font-size: 4rem;
-            animation: spin 3s linear infinite;
-            display: inline-block;
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
         }
         
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .roast-list {
-            text-align: left;
-            padding-left: 1.5rem;
-        }
-
-        .roast-list li {
-            margin: 0.8rem 0;
-            font-size: 1.1rem;
+        @media (max-width: 600px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="noise"></div>
+    
     <div class="container">
-        <div class="trophy">🏆</div>
-        <h1>THE OFFICIAL FRANK APPRECIATION PAGE</h1>
-        <p class="subtitle">Because someone had to make this...</p>
+        <header>
+            <div class="badge">Dossier Classifié</div>
+            <h1>Frank Est Con</h1>
+            <p class="tagline">Documentation officielle d'un cas particulier</p>
+        </header>
         
         <div class="card">
-            <h2>🎭 Who Is Frank?</h2>
-            <p>A mysterious creature known for talking an exceptional amount of shit while contributing absolutely nothing of value to any conversation.</p>
-            <div class="quote">"I'm not wrong, you just don't understand" - Frank, probably</div>
-        </div>
-        
-        <div class="card">
-            <h2>🏅 Frank's Achievements</h2>
-            <div class="achievements">
-                <div class="badge">
-                    <span class="emoji">🗣️</span>
-                    Professional Shit Talker
-                </div>
-                <div class="badge">
-                    <span class="emoji">🤡</span>
-                    Clown of the Year
-                </div>
-                <div class="badge">
-                    <span class="emoji">💨</span>
-                    Master of Hot Air
-                </div>
-                <div class="badge">
-                    <span class="emoji">🧢</span>
-                    Cap Champion
+            <div class="profile-section">
+                <div class="avatar">🤡</div>
+                <div class="profile-info">
+                    <h2>Frank</h2>
+                    <div class="role">Professionnel en Conneries</div>
+                    <p>Sujet d'étude fascinant. Connu pour ses opinions non-sollicitées et son incapacité chronique à se taire. Les scientifiques restent perplexes face à son manque total d'auto-conscience.</p>
                 </div>
             </div>
         </div>
         
         <div class="card">
-            <h2>📊 Fun Facts About Frank</h2>
-            <ul class="roast-list">
-                <li>Has never been right about anything, but argues anyway</li>
-                <li>His opinions are like WiFi signals - weak and unreliable</li>
-                <li>If talking shit was an Olympic sport, he'd still somehow lose</li>
-                <li>His brain has a loading icon that never finishes</li>
-                <li>Google couldn't find results for "Frank being useful"</li>
-            </ul>
-        </div>
-        
-        <div class="counter">
-            <div class="counter-number" id="counter">0</div>
-            <div class="counter-label">Times Frank has been wrong today</div>
+            <div class="card-header">
+                <div class="card-icon">📊</div>
+                <div class="card-title">Statistiques en Direct</div>
+            </div>
+            <div class="stat-grid">
+                <div class="stat">
+                    <div class="stat-value" id="counter">0</div>
+                    <div class="stat-label">Conneries dites aujourd'hui</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Chances d'avoir raison</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Niveau de confiance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">404</div>
+                    <div class="stat-label">Neurones trouvés</div>
+                </div>
+            </div>
         </div>
         
         <div class="card">
-            <h2>💬 What People Say About Frank</h2>
-            <div class="quote">"Who?" - Everyone</div>
-            <div class="quote">"He's... certainly a person who exists" - His mom, reluctantly</div>
-            <div class="quote">"Error 404: Good qualities not found" - This website</div>
+            <div class="card-header">
+                <div class="card-icon">🎖️</div>
+                <div class="card-title">Compétences Certifiées</div>
+            </div>
+            <ul class="traits-list">
+                <li>
+                    <div class="trait-icon">🗣️</div>
+                    <div class="trait-content">
+                        <div class="trait-name">Communication Avancée</div>
+                        <div class="trait-desc">Parle beaucoup. Dit peu. Comprend moins.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="trait-icon">🧠</div>
+                    <div class="trait-content">
+                        <div class="trait-name">Analyse Critique</div>
+                        <div class="trait-desc">Capable d'avoir tort sur absolument tous les sujets.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="trait-icon">💪</div>
+                    <div class="trait-content">
+                        <div class="trait-name">Persévérance</div>
+                        <div class="trait-desc">Continue d'argumenter même quand il a tort. Surtout quand il a tort.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="trait-icon">🎭</div>
+                    <div class="trait-content">
+                        <div class="trait-name">Acting</div>
+                        <div class="trait-desc">Fait semblant de savoir de quoi il parle avec une conviction impressionnante.</div>
+                    </div>
+                </li>
+            </ul>
         </div>
         
-        <div class="clown">🤡</div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">💬</div>
+                <div class="card-title">Témoignages</div>
+            </div>
+            <div class="quote-card" style="margin-bottom: 1.5rem;">
+                <div class="quote-text">"Qui ça?"</div>
+                <div class="quote-author">— Tout le monde</div>
+            </div>
+            <div class="quote-card" style="margin-bottom: 1.5rem;">
+                <div class="quote-text">"C'est... certainement quelqu'un qui existe."</div>
+                <div class="quote-author">— Sa mère, hésitante</div>
+            </div>
+            <div class="quote-card">
+                <div class="quote-text">"J'ai cherché ses qualités sur Google. Aucun résultat."</div>
+                <div class="quote-author">— Un ami anonyme</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📅</div>
+                <div class="card-title">Accomplissements Majeurs</div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-title">Record mondial de conneries consécutives</div>
+                    <div class="timeline-desc">A réussi à avoir tort 47 fois de suite dans une seule conversation.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-title">Diplôme en Bullshit Avancé</div>
+                    <div class="timeline-desc">Mention "Très Bien" en argumentation sans fondement.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-title">Nommé Clown de l'Année</div>
+                    <div class="timeline-desc">Un honneur bien mérité selon le comité unanime.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Naissance</div>
+                    <div class="timeline-title">Première erreur commise</div>
+                    <div class="timeline-desc">Le début d'une longue série.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card counter-section">
+            <div class="counter-value" id="live-counter">0</div>
+            <div class="counter-label">Personnes actuellement en train de se moquer de Frank</div>
+        </div>
         
         <footer>
-            <p>Made with ❤️ and a lot of patience by Timmy</p>
-            <p>© 2026 Frank Roast Industries. All rights reserved. Frank's dignity not included.</p>
+            <p>Créé avec ❤️ et beaucoup de patience par <strong>Timmy</strong></p>
+            <p style="margin-top: 0.5rem;">© 2026 frankestcon.xyz — La dignité de Frank n'est pas incluse.</p>
         </footer>
     </div>
     
     <script>
-        // Animate counter
-        let count = 0;
+        // Conneries counter
+        let count = Math.floor(Math.random() * 50) + 100;
         const counter = document.getElementById('counter');
+        counter.textContent = count;
+        
         setInterval(() => {
             count += Math.floor(Math.random() * 3) + 1;
             counter.textContent = count;
-        }, 2000);
+        }, 3000);
         
-        // Random sparkles
-        function createSparkle() {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle';
-            sparkle.textContent = ['✨', '⭐', '💫', '🌟'][Math.floor(Math.random() * 4)];
-            sparkle.style.left = Math.random() * 100 + 'vw';
-            sparkle.style.top = Math.random() * 100 + 'vh';
-            sparkle.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            document.body.appendChild(sparkle);
-            setTimeout(() => sparkle.remove(), 1500);
-        }
-        setInterval(createSparkle, 300);
+        // Live viewers counter
+        let viewers = Math.floor(Math.random() * 20) + 5;
+        const liveCounter = document.getElementById('live-counter');
+        liveCounter.textContent = viewers;
+        
+        setInterval(() => {
+            viewers += Math.floor(Math.random() * 5) - 2;
+            if (viewers < 1) viewers = 1;
+            liveCounter.textContent = viewers;
+        }, 5000);
     </script>
 </body>
 </html>
