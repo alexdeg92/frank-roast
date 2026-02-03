@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 The Official Frank Appreciation Page 🏆</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            font-family: 'Comic Neue', cursive;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .trophy {
+            font-size: 6rem;
+            animation: bounce 1s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 4px 4px 0 #000, -2px -2px 0 #ff6b6b;
+            margin: 1rem 0;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ffeaa7;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transform: rotate(-1deg);
+            transition: transform 0.3s;
+        }
+        
+        .card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+        
+        .card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        
+        .card h2 {
+            font-family: 'Bangers', cursive;
+            color: #6c5ce7;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            color: #2d3436;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-radius: 15px;
+            padding: 1rem;
+            font-weight: bold;
+            color: #2d3436;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .badge .emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            color: #e17055;
+            font-style: italic;
+            padding: 1rem;
+            border-left: 4px solid #e17055;
+            background: #fff5f5;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        
+        .counter {
+            background: #2d3436;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 2rem 0;
+        }
+        
+        .counter-number {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: #ff6b6b;
+        }
+        
+        .counter-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            animation: sparkle 1.5s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        footer {
+            margin-top: 3rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        .clown {
+            font-size: 4rem;
+            animation: spin 3s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .roast-list {
+            text-align: left;
+            padding-left: 1.5rem;
+        }
+
+        .roast-list li {
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="trophy">🏆</div>
+        <h1>THE OFFICIAL FRANK APPRECIATION PAGE</h1>
+        <p class="subtitle">Because someone had to make this...</p>
+        
+        <div class="card">
+            <h2>🎭 Who Is Frank?</h2>
+            <p>A mysterious creature known for talking an exceptional amount of shit while contributing absolutely nothing of value to any conversation.</p>
+            <div class="quote">"I'm not wrong, you just don't understand" - Frank, probably</div>
+        </div>
+        
+        <div class="card">
+            <h2>🏅 Frank's Achievements</h2>
+            <div class="achievements">
+                <div class="badge">
+                    <span class="emoji">🗣️</span>
+                    Professional Shit Talker
+                </div>
+                <div class="badge">
+                    <span class="emoji">🤡</span>
+                    Clown of the Year
+                </div>
+                <div class="badge">
+                    <span class="emoji">💨</span>
+                    Master of Hot Air
+                </div>
+                <div class="badge">
+                    <span class="emoji">🧢</span>
+                    Cap Champion
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📊 Fun Facts About Frank</h2>
+            <ul class="roast-list">
+                <li>Has never been right about anything, but argues anyway</li>
+                <li>His opinions are like WiFi signals - weak and unreliable</li>
+                <li>If talking shit was an Olympic sport, he'd still somehow lose</li>
+                <li>His brain has a loading icon that never finishes</li>
+                <li>Google couldn't find results for "Frank being useful"</li>
+            </ul>
+        </div>
+        
+        <div class="counter">
+            <div class="counter-number" id="counter">0</div>
+            <div class="counter-label">Times Frank has been wrong today</div>
+        </div>
+        
+        <div class="card">
+            <h2>💬 What People Say About Frank</h2>
+            <div class="quote">"Who?" - Everyone</div>
+            <div class="quote">"He's... certainly a person who exists" - His mom, reluctantly</div>
+            <div class="quote">"Error 404: Good qualities not found" - This website</div>
+        </div>
+        
+        <div class="clown">🤡</div>
+        
+        <footer>
+            <p>Made with ❤️ and a lot of patience by Timmy</p>
+            <p>© 2026 Frank Roast Industries. All rights reserved. Frank's dignity not included.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Animate counter
+        let count = 0;
+        const counter = document.getElementById('counter');
+        setInterval(() => {
+            count += Math.floor(Math.random() * 3) + 1;
+            counter.textContent = count;
+        }, 2000);
+        
+        // Random sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.textContent = ['✨', '⭐', '💫', '🌟'][Math.floor(Math.random() * 4)];
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 1500);
+        }
+        setInterval(createSparkle, 300);
+    </script>
+</body>
+</html>
